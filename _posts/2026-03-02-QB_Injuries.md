@@ -10,6 +10,7 @@ homepage: list
 homepage_title: "QB injuries: do NFL GMs assume health?"
 homepage_excerpt: "Do general managers assume health for their quarterbacks, or do they assume that previous injury trends will continue?"
 homepage_image: /assets/images/home/qb-inflation.jpg
+homepage_image_alt: "Inflation coefficients by year used to era-adjust quarterback stats into 2024"
 ---
 
 *Ongoing Insights from my work evaluating first-round drafted quarterback success and failure since 2000.*

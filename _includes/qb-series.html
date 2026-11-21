@@ -1,0 +1,20 @@
+<nav class="series-nav" aria-label="Quantifying QB Success">
+  <p>
+    Part {{ page.series_part }} of 3.
+    {%- if page.series_part == 1 %}
+    <span aria-current="page">Part 1</span>
+    {%- else %}
+    <a href="{% link _posts/2025-10-18-quantifying_QB_success_Pt_1.md %}"{% if page.series_part == 2 %} rel="prev"{% endif %}>Part 1</a>
+    {%- endif %}
+    {%- if page.series_part == 2 %}
+    <span aria-current="page">Part 2</span>
+    {%- else %}
+    <a href="{% link _posts/2025-11-01-quantifying_QB_success_PT_2.md %}"{% if page.series_part == 1 %} rel="next"{% elsif page.series_part == 3 %} rel="prev"{% endif %}>Part 2</a>
+    {%- endif %}
+    {%- if page.series_part == 3 %}
+    <span aria-current="page">Part 3</span>
+    {%- else %}
+    <a href="{% link _posts/2025-11-11-quantifying_QB_success_Pt_3.md %}"{% if page.series_part == 2 %} rel="next"{% endif %}>Part 3</a>
+    {%- endif %}
+  </p>
+</nav>

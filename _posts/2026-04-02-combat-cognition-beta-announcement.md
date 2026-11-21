@@ -12,6 +12,7 @@ homepage: list
 homepage_title: "Combat Cognition beta: train the space between classes"
 homepage_excerpt: "The mat is where skill is proven, but most of the week is not on the mat. A focused beta built around spaced rehearsal and load management."
 homepage_image: /assets/images/home/combat-feature.jpg
+homepage_image_alt: "Combat Cognition graphic with a gi and the line Master the mental game"
 ---
 
 *We’re opening a focused beta for gyms and serious practitioners. Here’s the problem we’re solving, how the app is built around learning science, and how to get involved.*
