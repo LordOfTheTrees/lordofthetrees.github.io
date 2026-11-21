@@ -58,6 +58,7 @@ image:
       <li><a href="{{ project.github_url }}" target="_blank" rel="noopener noreferrer">{{ project.homepage_more_label }}</a>{% if project.in_progress %} (in progress){% endif %}</li>
       {% endfor %}
     </ul>
+    <a class="archive" href="{{ '/pages/projects/' | relative_url }}">All projects</a>
   </div>
 </section>
 
@@ -87,7 +88,7 @@ image:
             <p class="excerpt">{{ post.homepage_excerpt }}</p>
           </div>
           <a class="thumb" href="{{ post.url | relative_url }}">
-            {% include responsive-image.html src=post.homepage_image alt="" width="1600" height="1000" loading="lazy" %}
+            {% include responsive-image.html src=post.homepage_image alt=post.homepage_image_alt width="1600" height="1000" loading="lazy" %}
           </a>
         </article>
         {% endfor %}

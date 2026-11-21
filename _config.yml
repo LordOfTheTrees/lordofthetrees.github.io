@@ -1,7 +1,15 @@
 # Site settings
 title: Andrew Erbs
 description: "Andrew Erbs, Director of AI Solutions at GO Media. Work and writing on product, data, and applied AI, from Navy systems and Yale research to the tools he ships."
-author: Andrew Erbs
+author:
+  name: Andrew Erbs
+  url: https://lordofthetrees.github.io
+  uri: https://lordofthetrees.github.io
+  links:
+    - https://linkedin.com/in/andrew-erbs-59bb9365
+    - https://github.com/lordofthetrees
+    - https://treeflow.substack.com
+    - https://octagonelo.com
 logo: /assets/images/profile.jpg
 # Domain root. The repo is lordofthetrees.github.io, so the site is not under /TreePage/.
 baseurl: ""

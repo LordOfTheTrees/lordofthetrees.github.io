@@ -346,6 +346,20 @@
     }
   }
 
+  .series-nav {
+    margin: 0 0 $spacing-unit 0;
+    font-size: $small-font-size;
+
+    p {
+      margin: 0;
+    }
+
+    a,
+    span {
+      margin-left: 0.75rem;
+    }
+  }
+
   .post-content {
     font-size: $small-font-size;
     line-height: 1.65;

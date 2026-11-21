@@ -10,6 +10,9 @@ homepage: list
 homepage_title: "Quantifying QB success, part 3: archetypal trajectories"
 homepage_excerpt: "The last piece in a three-part look at first-round quarterback performance and the shapes those careers actually take."
 homepage_image: /assets/images/home/qb.jpg
+homepage_image_alt: "Era-adjusted yardage trajectories for first-round quarterbacks"
+series: qb-success
+series_part: 3
 ---
 
 ### Opening: The Daniel Jones Problem

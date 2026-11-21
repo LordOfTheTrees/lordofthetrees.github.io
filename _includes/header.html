@@ -9,10 +9,12 @@
     <nav id="site-nav" class="site-nav" aria-label="Primary">
       {% if page.full_bleed %}
       <a href="#work">Work</a>
+      <a href="{{ '/pages/projects/' | relative_url }}">Projects</a>
       <a href="#writing">Writing</a>
       <a href="#about">About</a>
       {% else %}
       <a href="{{ '/#work' | relative_url }}">Work</a>
+      <a href="{{ '/pages/projects/' | relative_url }}">Projects</a>
       <a href="{{ '/pages/posts/' | relative_url }}">Writing</a>
       <a href="{{ '/pages/about/' | relative_url }}">About</a>
       <a href="{{ '/pages/contact/' | relative_url }}">Contact</a>
