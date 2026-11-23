@@ -32,6 +32,16 @@ defaults:
       path: "googlefdb247ce0b7de941.html"
     values:
       sitemap: false
+  # Reports, not pages. jekyll-sitemap includes static PDFs unless told not to.
+  - scope:
+      path: "assets/documents"
+    values:
+      sitemap: false
+  # Plain-text guide for models. Not a page to index.
+  - scope:
+      path: "llms.txt"
+    values:
+      sitemap: false
 
 # Analytics settings
 netlify_functions_url: "https://remarkable-syrniki-5c721e.netlify.app" # Your Netlify site URL for Functions

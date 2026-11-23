@@ -3,11 +3,12 @@ layout: page
 title: Projects
 permalink: /pages/projects/
 description: "Projects by Andrew Erbs, including OctagonELO, a quarterback evaluation framework, and Combat Cognition, plus downloadable reports and white papers."
+last_modified_at: 2026-11-23
 redirect_from:
   - /TreePage/pages/projects/
 ---
 
-# My Projects
+## My Projects
 
 Below is a selection of personal and academic projects I've worked on.
 

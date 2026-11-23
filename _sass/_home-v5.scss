@@ -444,6 +444,10 @@ p.date {
   margin-bottom: 0;
 }
 
+body.home .about p.more {
+  margin-top: 0.9rem;
+}
+
 .experience {
   list-style: none;
   margin: 0;
@@ -835,5 +839,59 @@ p.date {
 @media (min-width: 901px) and (prefers-reduced-motion: reduce) {
   .scroller {
     scroll-behavior: auto;
+  }
+}
+
+.hire {
+  background: #fff;
+  color: var(--ink);
+  padding: 2.5rem 0 2.8rem;
+}
+
+body.home .hire h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.7rem;
+}
+
+body.home .hire p {
+  max-width: 40rem;
+  margin-bottom: 0.85rem;
+}
+
+body.home .hire .lede {
+  margin-bottom: 1.15rem;
+}
+
+.hire ul {
+  list-style: none;
+  margin: 0 0 0.4rem;
+  padding: 0;
+  max-width: 40rem;
+}
+
+.hire li {
+  margin-bottom: 1rem;
+}
+
+body.home .hire h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.25rem;
+}
+
+body.home .hire .cta {
+  margin-top: 0.4rem;
+  margin-bottom: 0;
+}
+
+@media (min-width: 901px) {
+  .hire {
+    background: #fff;
+    color: var(--forest-ink);
+    padding: 2.6rem 0 3rem;
+    border-top: 1px solid var(--forest-line);
+  }
+
+  body.home .hire h2 {
+    font-size: 1.8rem;
   }
 }

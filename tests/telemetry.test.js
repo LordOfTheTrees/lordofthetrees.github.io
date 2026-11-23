@@ -404,7 +404,17 @@ test('tracker classifies clicks and keeps the experiment variant for the tab', (
   page.fire('document', 'click', {
     target: element({ tag: 'a', text: 'Substack', attrs: { href: 'https://treeflow.substack.com' } })
   });
-  assert.ok(page.events().some((event) => event.event === 'substack_link_click'));
+  page.fire('document', 'click', {
+    target: element({
+      tag: 'a',
+      text: 'Substack',
+      attrs: { href: 'https://treeflow.substack.com/?utm_source=lordofthetrees&utm_medium=site&utm_campaign=home_alt' }
+    })
+  });
+  assert.equal(
+    page.events().filter((event) => event.event === 'substack_link_click').length,
+    2
+  );
 
   page.fire('document', 'click', {
     target: element({ tag: 'a', text: 'Resume', attrs: { href: '/TreePage/resume.pdf' } })

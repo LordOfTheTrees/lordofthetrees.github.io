@@ -6,6 +6,7 @@ description: "Andrew Erbs, Director of AI Solutions at GO Media. Work and writin
 redirect_from:
   - /TreePage/
   - /TreePage/index.html
+last_modified_at: 2026-11-23
 image:
   path: /assets/images/profile.jpg
   width: 400
@@ -36,7 +37,7 @@ image:
         {% else %}
           {% assign card_loading = "lazy" %}
         {% endif %}
-        {% include responsive-image.html src=project.homepage_image alt=project.homepage_image_alt width="1600" height="1000" loading=card_loading %}
+        {% include responsive-image.html src=project.homepage_image alt=project.homepage_image_alt width="1600" height="1000" loading=card_loading sizes="(min-width: 901px) 21rem, (min-width: 701px) 50vw, 100vw" %}
       </a>
       <div class="copy">
         {% if project.homepage_kicker %}
@@ -72,7 +73,7 @@ image:
         {% if feature %}
         <article class="lead">
           <a class="media" href="{{ feature.url | relative_url }}">
-            {% include responsive-image.html src=feature.homepage_image alt=feature.homepage_image_alt width="1600" height="1000" loading="lazy" %}
+            {% include responsive-image.html src=feature.homepage_image alt=feature.homepage_image_alt width="1600" height="1000" loading="lazy" sizes="(min-width: 901px) 42rem, 100vw" %}
           </a>
           <p class="date">{{ feature.date | date: "%B %-d, %Y" }}</p>
           <h3><a href="{{ feature.url | relative_url }}">{{ feature.homepage_title }}</a></h3>
@@ -88,7 +89,7 @@ image:
             <p class="excerpt">{{ post.homepage_excerpt }}</p>
           </div>
           <a class="thumb" href="{{ post.url | relative_url }}">
-            {% include responsive-image.html src=post.homepage_image alt=post.homepage_image_alt width="1600" height="1000" loading="lazy" %}
+            {% include responsive-image.html src=post.homepage_image alt=post.homepage_image_alt width="1600" height="1000" loading="lazy" sizes="(min-width: 561px) 8.25rem, 16rem" %}
           </a>
         </article>
         {% endfor %}
@@ -101,7 +102,7 @@ image:
           <input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required>
           <button type="submit">Subscribe</button>
         </form>
-        <p class="alt"><a href="https://treeflow.substack.com" target="_blank" rel="noopener noreferrer">Substack</a> · <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="{{ '/pages/posts/' | relative_url }}">Archive</a></p>
+        <p class="alt"><a href="https://treeflow.substack.com/?utm_source=lordofthetrees&amp;utm_medium=site&amp;utm_campaign=home_alt" target="_blank" rel="noopener noreferrer">Substack</a> · <a href="https://linkedin.com/in/{{ site.linkedin_username }}" target="_blank" rel="noopener noreferrer">LinkedIn</a> · <a href="{{ '/pages/posts/' | relative_url }}">Archive</a></p>
       </aside>
     </div>
   </div>
@@ -115,6 +116,7 @@ image:
       <div>
         <p>I’m interested in the gap between how systems are supposed to work and how people actually behave in them. That thread runs through eight years as a Navy surface warfare officer, product work at Amazon, research at Yale’s Center for Customer Insights, and the projects above.</p>
         <p>I studied computer engineering and philosophy at Penn State, and since September 2026 I have led applied AI work at GO Media in Raleigh.</p>
+        <p class="more"><a href="{{ '/pages/about/' | relative_url }}">More about me</a></p>
       </div>
     </div>
     <ol class="experience">
@@ -122,5 +124,27 @@ image:
       <li><span class="role">{{ row.role }}</span><span class="org">{{ row.org }}</span><span class="when">{{ row.dates }}</span></li>
       {% endfor %}
     </ol>
+  </div>
+</section>
+
+<section class="hire" id="work-with-me">
+  <div class="wrap">
+    <h2>Work with me</h2>
+    <p class="lede">I am open to advisory projects, collaborations, speaking, and conversations about roles.</p>
+    <ul>
+      <li>
+        <h3>Applied AI systems that ship</h3>
+        <p><a href="https://octagonelo.com">OctagonELO</a> publishes pre-fight MMA probabilities. <a href="{{ '/posts/combat-cognition-beta-announcement/' | relative_url }}">Combat Cognition</a> is a training app for the hours between classes.</p>
+      </li>
+      <li>
+        <h3>Analytics and measurement</h3>
+        <p>Experimentation, attribution, and data products. The <a href="{{ '/posts/quantifying_QB_success_Pt_1/' | relative_url }}">quarterback evaluation framework</a> uses era-adjusted stats and ridge regression to test which numbers track a second contract.</p>
+      </li>
+      <li>
+        <h3>Product strategy for data-heavy tools</h3>
+        <p>Those projects are the examples: a live prediction site, a training product, and a measurement framework, each built around a decision someone has to make. The full set is on <a href="{{ '/pages/projects/' | relative_url }}">Projects</a>.</p>
+      </li>
+    </ul>
+    <p class="cta"><a class="button" href="{{ '/pages/contact/' | relative_url }}?utm_source=lordofthetrees&amp;utm_medium=site&amp;utm_campaign=work_with_me">Contact</a></p>
   </div>
 </section>

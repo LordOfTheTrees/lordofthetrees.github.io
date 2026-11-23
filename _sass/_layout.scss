@@ -402,6 +402,30 @@
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
     }
   }
+
+  .related-writing {
+    margin-top: $spacing-unit;
+    padding-top: $spacing-unit / 2;
+    border-top: 1px solid $border-color;
+
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.55rem;
+    }
+
+    ul {
+      margin: 0 0 0.75rem;
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
 }
 
 // About-page portrait. Square and uncropped, same rule as the homepage photo:

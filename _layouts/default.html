@@ -36,6 +36,7 @@
   {% else %}
     {{ seo_markup }}
   {% endif %}
+  {% include person-jsonld.html %}
   <script src="{{ '/assets/js/util.js' | relative_url }}"></script>
 </head>
 <body{% if page.full_bleed %} class="home"{% endif %}>
