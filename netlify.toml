@@ -5,3 +5,10 @@
 [functions]
   directory = "netlify/functions"
 
+# This host serves a full copy of the GitHub Pages site. Ask crawlers not to
+# index it. The header does not change function status codes or bodies.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+

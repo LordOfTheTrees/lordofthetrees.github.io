@@ -4,6 +4,7 @@ title: About Me
 permalink: /pages/about/
 prose: true
 description: "Andrew Erbs on the gap between how systems are supposed to work and how people behave, from the Navy and Amazon to research at Yale and applied AI at GO Media."
+last_modified_at: 2026-11-23
 redirect_from:
   - /TreePage/pages/about/
 ---
@@ -11,6 +12,8 @@ redirect_from:
 <div class="profile-image-container">
   <img src="{{ site.baseurl }}/assets/images/profile.jpg" alt="Portrait of Andrew Erbs" class="profile-image" width="400" height="400">
 </div>
+
+## Background
 
 I'm drawn to the gap between how things are supposed to work and how they actually work.
 
@@ -24,7 +27,11 @@ At Amazon, I worked on the third-party seller marketplace, a genuinely complex e
 
 The consumer research I did at Yale's Center for Customer Insights pushed me further in that direction. Sitting in on interviews, watching people rationalize choices they'd already made emotionally, seeing how tiny framing shifts change what feels like a reasonable price. It reinforced something I keep coming back to: the most important thing a product team can do is understand what's actually driving behavior, not just what users report.
 
+## What I work on
+
 I also can't stop building things. Not as a hobby, exactly. More like a compulsion. When I hit friction I can't stop thinking about it until I've either solved it or convinced myself it's unsolvable. That's led me to ship a consumer app for tactical cognitive training, build AI-powered automation tools for PM workflows, develop a quantitative platform for quarterback evaluation, and wire together a personalized news intelligence system. None of them started as portfolio pieces. Each one started with a specific annoyance I couldn't ignore.
+
+## Elsewhere
 
 Outside of all that, I spent years as a nationally ranked Sabre fencer and have trained in five martial arts. I lived in Naples for two years and speak Italian well enough joke with other italians about Napoli. I'm currently at Yale finishing my MBA, where I spend a lot of time thinking about behavioral science, markets, and how to apply both to consumer products.
 

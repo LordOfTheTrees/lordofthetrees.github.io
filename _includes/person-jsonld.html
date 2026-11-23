@@ -1,0 +1,53 @@
+{%- comment -%}
+  Standalone schema.org Person, once per page. jekyll-seo-tag 2.8 writes its own
+  author object with @type, name, and url only, so this block carries @id.
+{%- endcomment -%}
+{%- assign person_image = "/assets/images/profile.jpg" | absolute_url -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "{{ site.url }}/#person",
+  "name": {{ site.author.name | jsonify }},
+  "url": {{ site.author.url | jsonify }},
+  "image": {{ person_image | jsonify }},
+  "jobTitle": "Director of AI Solutions",
+  "description": "Served as a U.S. Navy Surface Warfare Officer from 2016 to 2024.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Raleigh",
+    "addressRegion": "NC",
+    "addressCountry": "US"
+  },
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "Yale School of Management",
+      "description": "MBA, 2026"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "The Pennsylvania State University",
+      "description": "B.S. Computer Engineering and Philosophy, 2016"
+    }
+  ],
+  "hasOccupation": {
+    "@type": "Occupation",
+    "name": "Surface Warfare Officer",
+    "description": "Served as a U.S. Navy Surface Warfare Officer from 2016 to 2024.",
+    "occupationLocation": {
+      "@type": "Organization",
+      "name": "U.S. Navy"
+    }
+  },
+  "knowsAbout": [
+    "applied AI",
+    "product analytics",
+    "measurement and experimentation",
+    "data products",
+    "sports analytics",
+    "MMA prediction models"
+  ],
+  "sameAs": {{ site.author.links | jsonify }}
+}
+</script>

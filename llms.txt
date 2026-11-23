@@ -1,0 +1,28 @@
+# Andrew Erbs
+
+> Andrew Erbs is a Director of AI Solutions in Raleigh, North Carolina. He builds applied AI systems that ship, measurement for product decisions, and data-heavy tools. Public work includes OctagonELO, a quarterback evaluation framework, and Combat Cognition. He served as a U.S. Navy Surface Warfare Officer from 2016 to 2024, earned a B.S. in Computer Engineering and Philosophy from Penn State in 2016, and an MBA from Yale School of Management in 2026. Reach him from the contact page or LinkedIn, or subscribe to the writing on Substack.
+
+## Pages
+
+- [About](https://lordofthetrees.github.io/pages/about/): The thread from Navy service and product work through Yale research to the tools he ships.
+- [Projects](https://lordofthetrees.github.io/pages/projects/): OctagonELO, the quarterback evaluation framework, Combat Cognition, and downloadable reports.
+- [Writing](https://lordofthetrees.github.io/pages/posts/): Notes on quarterback evaluation, consumer behavior, Combat Cognition, and the OctagonELO launch.
+- [Contact](https://lordofthetrees.github.io/pages/contact/): Advisory projects, collaborations, speaking, and conversations about roles. LinkedIn is the fastest route.
+
+## Writing
+
+- [OctagonELO Is Live: Pre-Fight MMA Predictions You Can Read](https://lordofthetrees.github.io/posts/octagon-elo-launch/): Launch note for pre-fight probabilities, finish and decision splits, and intervals that widen when a bout is hard to call.
+- [Combat Cognition Beta: Train the Space Between Classes](https://lordofthetrees.github.io/posts/combat-cognition-beta-announcement/): A gym beta for logging real sessions and using short spaced visualization between classes.
+- [QB Injuries: Do NFL GM's Assume Health?](https://lordofthetrees.github.io/posts/QB_Injuries/): When an injury-shortened season is projected forward, and when missed games count.
+- [Corona Capture: Why Most Purchases Never Enter the Marketing Funnel, and What That Means For Individual Agency](https://lordofthetrees.github.io/posts/Corona/): Salient associations often decide a purchase before comparison starts.
+- [Quantifying QB Success: Archetypal Trajectories and Current Pending Decisions (Part 3)](https://lordofthetrees.github.io/posts/quantifying_QB_success_Pt_3/): Career shapes for first-round quarterbacks since 2000, and recency bias in a contract decision.
+- [Quantifying QB Success: Temporal Weighting Patterns in Contract Decisions, Part 2](https://lordofthetrees.github.io/posts/quantifying_QB_success_PT_2/): Extensions overweight the latest season against an equal-weight baseline.
+- [Quantifying QB Success: A 25-Year Analysis of First-Round Performance, Part 1](https://lordofthetrees.github.io/posts/quantifying_QB_success_Pt_1/): Which era-adjusted public stats track a second contract.
+- [Welcome to My Website](https://lordofthetrees.github.io/posts/welcome/): Short 2025 opening note. Left out of the sitemap as a thin placeholder.
+
+## Elsewhere
+
+- [LinkedIn](https://linkedin.com/in/andrew-erbs-59bb9365): Fastest way to reach him.
+- [GitHub](https://github.com/lordofthetrees): Code for the projects above.
+- [Substack](https://treeflow.substack.com/?utm_source=lordofthetrees&utm_medium=site&utm_campaign=llms): TreeFlow, the same writing by email.
+- [OctagonELO](https://octagonelo.com): Live pre-fight MMA probabilities.

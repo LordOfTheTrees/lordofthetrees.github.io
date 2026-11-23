@@ -1,0 +1,39 @@
+{%- comment -%}
+  Two or three other posts. Prefer a shared category, then fill with the
+  newest remaining posts. Skip sitemap:false placeholders such as welcome.
+{%- endcomment -%}
+{%- assign shown = 0 -%}
+{%- assign shown_urls = "|" -%}
+<nav class="related-writing" aria-label="Related writing">
+  <h2>Related writing</h2>
+  <ul>
+    {%- for post in site.posts -%}
+      {%- if shown < 3 and post.url != page.url and post.sitemap != false -%}
+        {%- assign shares = false -%}
+        {%- for cat in page.categories -%}
+          {%- if post.categories contains cat -%}
+            {%- assign shares = true -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- if shares -%}
+          <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+          {%- assign shown = shown | plus: 1 -%}
+          {%- assign shown_urls = shown_urls | append: post.url | append: "|" -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if shown < 3 -%}
+      {%- for post in site.posts -%}
+        {%- assign marker = "|" | append: post.url | append: "|" -%}
+        {%- if shown < 3 and post.url != page.url and post.sitemap != false -%}
+          {%- unless shown_urls contains marker -%}
+            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+            {%- assign shown = shown | plus: 1 -%}
+            {%- assign shown_urls = shown_urls | append: post.url | append: "|" -%}
+          {%- endunless -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endif -%}
+  </ul>
+  <p><a href="{{ '/pages/posts/' | relative_url }}">All writing</a></p>
+</nav>
