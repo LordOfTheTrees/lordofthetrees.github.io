@@ -101,8 +101,26 @@ document.addEventListener('DOMContentLoaded', function () {
   function openPhotoModal(index) {
     currentPhotoIndex = index;
     const photo = filteredPhotos[index];
+    const image = document.getElementById('modal-image');
+    const fullLink = document.getElementById('modal-full-link');
+    const fullText = document.getElementById('modal-full-text');
+    const preview = photo.previewUrl || photo.url;
 
-    document.getElementById('modal-image').src = photo.url;
+    image.alt = photo.title;
+    image.onload = () => {
+      if (!image.naturalWidth) return;
+      image.width = image.naturalWidth;
+      image.height = image.naturalHeight;
+    };
+    // A missing preview must not stick the lightbox on a broken image.
+    image.onerror = () => {
+      image.onerror = null;
+      if (image.getAttribute('src') !== photo.url) image.src = photo.url;
+    };
+    image.src = preview;
+    fullLink.href = photo.url;
+    fullText.href = photo.url;
+
     document.getElementById('modal-title').textContent = photo.title;
     document.getElementById('modal-location').textContent = photo.location;
     document.getElementById('modal-date').textContent = formatDate(photo.date);

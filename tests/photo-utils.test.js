@@ -103,3 +103,25 @@ describe('thumbnailUrl', () => {
   });
 });
 
+describe('previewUrl', () => {
+  test('points at the sibling previews folder and keeps the original name as jpeg', () => {
+    const original = 'https://raw.githubusercontent.com/LordOfTheTrees/lordofthetrees.github.io/main/assets/images/photography/2026-10-20_Patagonia_Condor.jpg';
+    assert.equal(
+      photos.previewUrl(original, '2026-10-20_Patagonia_Condor.jpg'),
+      'https://raw.githubusercontent.com/LordOfTheTrees/lordofthetrees.github.io/main/assets/images/photography-previews/2026-10-20_Patagonia_Condor.jpg'
+    );
+  });
+
+  test('a non-jpeg original still gets a jpeg preview url', () => {
+    const original = 'https://example.com/assets/images/photography/shot.png';
+    assert.equal(
+      photos.previewUrl(original, 'shot.png'),
+      'https://example.com/assets/images/photography-previews/shot.jpg'
+    );
+  });
+
+  test('an empty download url stays empty', () => {
+    assert.equal(photos.previewUrl('', 'shot.jpg'), '');
+  });
+});
+

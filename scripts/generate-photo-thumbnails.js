@@ -1,8 +1,9 @@
 // Builds grid thumbnails for assets/images/photography.
 //
-// Originals stay in that folder (the gallery lightbox loads them). Thumbnails
-// are JPEGs in assets/images/photography-thumbs, 800px on the long side and
-// about 100 KB. That folder is a sibling on purpose: the photography page
+// Originals stay in that folder. Thumbnails are JPEGs in
+// assets/images/photography-thumbs, 800px on the long side and about 100 KB.
+// The lightbox uses the separate web preview from scripts/make-previews.js.
+// The thumbs folder is a sibling on purpose: the photography page
 // lists assets/images/photography through the GitHub contents API, which does
 // not recurse, so thumbnails are never extra photos.
 //

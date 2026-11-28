@@ -34,4 +34,5 @@ jobs:
       - run: npm run lint
       - run: npm test
       - run: npm run photos:thumbs:check
+      - run: npm run photos:previews:check
       - run: npm run home:images:check
