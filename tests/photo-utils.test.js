@@ -85,6 +85,11 @@ describe('parsePhotoFilename', () => {
 });
 
 describe('thumbnailUrl', () => {
+  test('returns empty string when downloadUrl is missing', () => {
+    assert.equal(photos.thumbnailUrl('', '2024-10-15_New_York_Columbia.jpg'), '');
+    assert.equal(photos.thumbnailUrl(null, 'shot.png'), '');
+  });
+
   test('points at the sibling thumbs folder and a jpeg name', () => {
     const original = 'https://raw.githubusercontent.com/LordOfTheTrees/TreePage/main/assets/images/photography/2024-10-15_New_York_Columbia.jpg';
     const thumb = photos.thumbnailUrl(original, '2024-10-15_New_York_Columbia.jpg');
@@ -100,6 +105,84 @@ describe('thumbnailUrl', () => {
       photos.thumbnailUrl(original, 'shot.png'),
       'https://example.com/assets/images/photography-thumbs/shot.jpg'
     );
+  });
+});
+
+describe('fetchPhotosFromGitHub', () => {
+  /** @type {typeof fetch | undefined} */
+  let originalFetch;
+
+  test.before(() => {
+    originalFetch = globalThis.fetch;
+  });
+
+  test.after(() => {
+    globalThis.fetch = originalFetch;
+  });
+
+  test('throws on API failure so callers can show an error instead of demo photos', async () => {
+    globalThis.fetch = async () => ({ ok: false, status: 403 });
+    await assert.rejects(
+      () => photos.fetchPhotosFromGitHub(),
+      /GitHub API error: 403/
+    );
+  });
+
+  test('requests the lordofthetrees.github.io contents API and returns sorted, filtered photos', async () => {
+    let requestedUrl = '';
+    globalThis.fetch = async (url) => {
+      requestedUrl = String(url);
+      return {
+        ok: true,
+        json: async () => [
+          {
+            type: 'dir',
+            name: 'ignored-dir',
+          },
+          {
+            type: 'file',
+            name: 'notes.txt',
+            download_url: 'https://cdn.example/assets/images/photography/notes.txt',
+            sha: '00000000',
+            size: 1,
+            html_url: 'https://github.com/x',
+          },
+          {
+            type: 'file',
+            name: '2024-01-01_Winter.jpg',
+            download_url: 'https://cdn.example/assets/images/photography/2024-01-01_Winter.jpg',
+            sha: 'aaaaaaaa',
+            size: 2,
+            html_url: 'https://github.com/x',
+          },
+          {
+            type: 'file',
+            name: '2024-06-01_Summer.jpg',
+            download_url: 'https://cdn.example/assets/images/photography/2024-06-01_Summer.jpg',
+            sha: 'bbbbbbbb',
+            size: 3,
+            html_url: 'https://github.com/x',
+          },
+        ],
+      };
+    };
+
+    const result = await photos.fetchPhotosFromGitHub();
+
+    assert.match(
+      requestedUrl,
+      /^https:\/\/api\.github\.com\/repos\/LordOfTheTrees\/lordofthetrees\.github\.io\/contents\/assets\/images\/photography$/
+    );
+    assert.equal(result.length, 2);
+    assert.equal(result[0].filename, '2024-06-01_Summer.jpg');
+    assert.equal(result[1].filename, '2024-01-01_Winter.jpg');
+    assert.equal(
+      result[0].thumbUrl,
+      'https://cdn.example/assets/images/photography-thumbs/2024-06-01_Summer.jpg'
+    );
+    assert.equal(result[0].title, 'Summer');
+    assert.equal(result[0].location, 'Unknown');
+    assert.equal(result[1].id, 'aaaaaaaa');
   });
 });
 
