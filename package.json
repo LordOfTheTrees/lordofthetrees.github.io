@@ -11,6 +11,8 @@
     "test": "node --test \"tests/**/*.test.js\"",
     "photos:thumbs": "node scripts/generate-photo-thumbnails.js",
     "photos:thumbs:check": "node scripts/generate-photo-thumbnails.js --check",
+    "photos:previews": "node scripts/make-previews.js",
+    "photos:previews:check": "node scripts/make-previews.js --check",
     "home:images": "node scripts/generate-home-images.js",
     "home:images:check": "node scripts/generate-home-images.js --check"
   },

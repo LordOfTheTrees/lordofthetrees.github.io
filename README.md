@@ -60,22 +60,33 @@ a database; the Jekyll site runs fine without them.
 - `_sass/` — all styling; no inline `<style>` blocks
 - `tests/` — Node's built-in test runner over the functions and shared JS
 
-## Photography thumbnails
+## Photography images
 
-Full-size photos stay in `assets/images/photography/`. The gallery grid and the
-homepage banner load JPEGs from `assets/images/photography-thumbs/` (800px on
-the long side, about 100 KB). The lightbox still opens the original. Thumbnails
-live in that sibling folder so the GitHub contents listing of the originals
-does not treat them as extra photos.
+Full-size photos stay in `assets/images/photography/`. Nothing in the preview
+or thumbnail scripts rewrites those files.
 
-After adding or replacing a photo, generate its thumbnail and commit it:
+Two derivatives sit in sibling folders so the GitHub contents listing of the
+originals does not treat them as extra photos:
+
+- `assets/images/photography-thumbs/` — gallery grid JPEGs, 800px on the long
+  side, about 100 KB.
+- `assets/images/photography-previews/` — lightbox JPEGs, 1600px on the long
+  side, quality near 80, well under 500 KB. The lightbox image links to the
+  full-resolution original.
+
+After adding or replacing a photo, generate both and commit them:
 
 ```
 npm run photos:thumbs
+npm run photos:previews
 ```
 
-CI runs `npm run photos:thumbs:check` and fails if a thumbnail is missing,
-stale, larger than 800px on the long side, or over about 120 KB.
+`scripts/make-previews.js` is the preview writer (`npm run photos:previews`).
+It uses sharp, already a dev dependency, and never writes into the originals
+folder. CI runs `npm run photos:thumbs:check` and `npm run photos:previews:check`.
+The thumbnail check fails if a thumbnail is missing, stale, larger than 800px
+on the long side, or over about 120 KB. The preview check fails if a preview
+is missing, stale, larger than 1600px on the long side, or over 500 KB.
 
 ## Documentation
 

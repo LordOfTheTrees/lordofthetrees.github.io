@@ -10,6 +10,9 @@
   // returned as extra photos.
   const PHOTOS_FOLDER = 'assets/images/photography';
   const THUMBS_FOLDER = 'assets/images/photography-thumbs';
+  // Web-size lightbox images. Sibling of the originals for the same reason
+  // as the thumbnails: the contents API does not recurse.
+  const PREVIEWS_FOLDER = 'assets/images/photography-previews';
   const PHOTO_EXTENSION = /\.(jpg|jpeg|png|gif|webp)$/i;
   const DATE_IN_NAME = /(\d{4}-\d{2}-\d{2})/;
 
@@ -47,13 +50,21 @@
   }
 
   // Same Git ref as the original download URL, different folder.
-  function thumbnailUrl(downloadUrl, filename) {
+  function siblingJpegUrl(downloadUrl, filename, folder) {
     if (!downloadUrl) return '';
-    const thumb = thumbnailName(filename);
+    const jpeg = thumbnailName(filename);
     return downloadUrl.replace(
       `/${PHOTOS_FOLDER}/${filename}`,
-      `/${THUMBS_FOLDER}/${thumb}`
+      `/${folder}/${jpeg}`
     );
+  }
+
+  function thumbnailUrl(downloadUrl, filename) {
+    return siblingJpegUrl(downloadUrl, filename, THUMBS_FOLDER);
+  }
+
+  function previewUrl(downloadUrl, filename) {
+    return siblingJpegUrl(downloadUrl, filename, PREVIEWS_FOLDER);
   }
 
   function toPhoto(file) {
@@ -63,6 +74,7 @@
       filename: file.name,
       url: file.download_url,
       thumbUrl: thumbnailUrl(file.download_url, file.name),
+      previewUrl: previewUrl(file.download_url, file.name),
       title: meta.title || stripExtension(file.name),
       location: meta.location || 'Unknown',
       // Undated files sort as newest.
@@ -102,7 +114,8 @@
       parsePhotoFilename,
       fetchPhotosFromGitHub,
       formatDate,
-      thumbnailUrl
+      thumbnailUrl,
+      previewUrl
     }
   });
 })(window);

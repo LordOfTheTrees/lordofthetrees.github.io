@@ -2,8 +2,8 @@
 layout: page
 title: Photography
 permalink: /pages/photography/
-description: "Photography by Andrew Erbs: a grid and a list of places and moments, with smaller previews in the gallery and the original image in the lightbox."
-last_modified_at: 2026-11-23
+description: "Photography by Andrew Erbs: a grid and a list of places and moments. The gallery uses small thumbnails, the lightbox uses a web-size preview, and that preview links to the full-resolution original."
+last_modified_at: 2026-11-28
 redirect_from:
   - /TreePage/pages/photography/
 ---
@@ -50,13 +50,16 @@ redirect_from:
     <button class="modal-nav prev-photo">❮</button>
     <button class="modal-nav next-photo">❯</button>
     <div class="modal-image-container">
-      <img id="modal-image" src="" alt="">
+      <a id="modal-full-link" class="modal-full-link" href="" target="_blank" rel="noopener noreferrer">
+        <img id="modal-image" src="" alt="" loading="lazy">
+      </a>
     </div>
     <div class="modal-info">
       <h3 id="modal-title"></h3>
       <p id="modal-location"></p>
       <p id="modal-date"></p>
       <p id="modal-description"></p>
+      <p><a id="modal-full-text" class="modal-full-text" href="" target="_blank" rel="noopener noreferrer">Full resolution</a></p>
     </div>
   </div>
 </div>
